@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+declare var AMap: any;  //why?
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  map: any;
+
+  constructor() {
+
+  }
+
+  ngOnInit() {
+    this.map = new AMap.Map('container', {
+      resizeEnable: true, 
+    });
+  }
 }
